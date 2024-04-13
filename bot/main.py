@@ -58,6 +58,7 @@ async def download_photo(message: Message, state: FSMContext) -> None:
         destination=buf
     )
     await client.upload(file, f"{DEFAULT_DIR_NAME}/{file_name}")
+    file.close()
 
     await download_photo_msg.edit_text("Фото успешно загружено на Диск!")
 
