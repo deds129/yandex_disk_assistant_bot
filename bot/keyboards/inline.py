@@ -12,6 +12,8 @@ main_login_inline_keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             InlineKeyboardButton(text="Войти используя код", url=f"{code_url}"),
+        ],
+        [
             InlineKeyboardButton(text="Войти используя токен", url=f"{auth_url}")
         ],
         [
@@ -37,4 +39,10 @@ to_start_need_to_auth = InlineKeyboardMarkup(
     ]
 )
 
-
+edit_save_path = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(text="Изменить место сохранения", callback_data="change_save_path")
+        ]
+    ]
+)

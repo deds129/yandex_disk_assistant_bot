@@ -24,6 +24,6 @@ async def login_via_code(*, code: str) -> bool:
     return await client.check_token()
 
 
-async def create_default_dir():
-    if not await client.exists(DEFAULT_DIR_NAME):
-        await client.mkdir(DEFAULT_DIR_NAME)
+async def create_save_dir(*, save_path: str):
+    if not await client.exists(save_path):
+        await client.mkdir(save_path)
